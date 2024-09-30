@@ -1,0 +1,16 @@
+{
+   "cSpell.words": [
+      "nyxvim",
+      "renamer",
+      "Tabufline"
+   ],
+   "Lua.diagnostics.disable": [
+      "undefined-global",
+      "need-check-nil",
+      "deprecated",
+      "undefined-doc-class",
+      "undefined-doc-name",
+      "different-requires",
+      "cast-local-type"
+   ]
+}
