@@ -1,1 +1,1 @@
-require "lua.nyxvim.init"
+require "nyxvim"
