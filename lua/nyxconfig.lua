@@ -87,5 +87,5 @@ local options = {
   mason = { cmd = true, pkgs = {} },
 }
 
-local status, chadrc = pcall(require, "chadrc")
-return vim.tbl_deep_extend("force", options, status and chadrc or {})
+local status, nyxrc = pcall(require, "nyxrc")
+return vim.tbl_deep_extend("force", options, status and nyxrc or {})

@@ -9,7 +9,7 @@ local action_state = require "telescope.actions.state"
 
 local function reload_theme(name)
   require("nyxconfig").ui.theme = name
-  require("nyxvim_types.base46").load_all_highlights()
+  require("base46").load_all_highlights()
   vim.api.nvim_exec_autocmds("User", { pattern = "NyxVimThemeReload" })
 end
 
@@ -60,11 +60,11 @@ local function switcher()
         reload_theme(action_state.get_selected_entry()[1])
       end)
 
-      ------------ save theme to chadrc on enter ----------------
+      ------------ save theme to nyxrc on enter ----------------
       actions.select_default:replace(function()
         if action_state.get_selected_entry() then
-          local chadrc = dofile(vim.fn.stdpath "config" .. "/lua/chadrc.lua")
-          local old_theme = chadrc.ui and chadrc.ui.theme or chadrc.base46.theme
+          local nyxrc = dofile(vim.fn.stdpath "config" .. "/lua/nyxrc.lua")
+          local old_theme = nyxrc.ui and nyxrc.ui.theme or nyxrc.base46.theme
           old_theme = '"' .. old_theme .. '"'
 
           local theme = '"' .. action_state.get_selected_entry()[1] .. '"'

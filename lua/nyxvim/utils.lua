@@ -20,12 +20,12 @@ M.list_themes = function()
 end
 
 M.replace_word = function(old, new)
-  local chadrc = vim.fn.stdpath "config" .. "/lua/" .. "chadrc.lua"
-  local file = io.open(chadrc, "r")
+  local nyxrc = vim.fn.stdpath "config" .. "/lua/" .. "nyxrc.lua"
+  local file = io.open(nyxrc, "r")
   local added_pattern = string.gsub(old, "-", "%%-") -- add % before - if exists
   local new_content = file:read("*all"):gsub(added_pattern, new)
 
-  file = io.open(chadrc, "w")
+  file = io.open(nyxrc, "w")
   file:write(new_content)
   file:close()
 end
@@ -50,7 +50,7 @@ end
 
 M.reload = function(module)
   require("plenary.reload").reload_module "nyxconfig"
-  require("plenary.reload").reload_module "chadrc"
+  require("plenary.reload").reload_module "nyxrc"
   require("plenary.reload").reload_module "base46"
   require("plenary.reload").reload_module "nyxvim"
 
@@ -59,7 +59,7 @@ M.reload = function(module)
   end
 
   require "nyxvim"
-  require("nyxvim_types.base46").load_all_highlights()
+  require("base46").load_all_highlights()
 end
 
 return M

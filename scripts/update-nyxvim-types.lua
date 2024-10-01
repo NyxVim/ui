@@ -3,7 +3,7 @@ local normalize = vim.fs.normalize
 local fnamemodify = vim.fn.fnamemodify
 -- local nyxvim_types_fp = vim.fs.normalize(vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":p:h"))
 local nyxvim_types_fp = fnamemodify(normalize(debug.getinfo(1, "S").source:sub(2)), ":p:h:h") .. "/nyxvim_types"
-local base46_fp = fnamemodify(normalize(debug.getinfo(require("nyxvim_types.base46").compile, "S").source:sub(2)), ":p:h")
+local base46_fp = fnamemodify(normalize(debug.getinfo(require("base46").compile, "S").source:sub(2)), ":p:h")
 
 local write_file = function(path, content)
   local file = assert(io.open(path, "w+"))
