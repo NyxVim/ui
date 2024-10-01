@@ -34,7 +34,7 @@ local function switcher()
     prompt_title = "󱥚 Set NyxVim Theme",
     previewer = previewer,
     finder = finders.new_table {
-      results = require("lua.nyxvim.utils").list_themes(),
+      results = require("nyxvim.utils").list_themes(),
     },
     sorter = conf.generic_sorter(),
 
@@ -69,7 +69,7 @@ local function switcher()
 
           local theme = '"' .. action_state.get_selected_entry()[1] .. '"'
 
-          require("lua.nyxvim.utils").replace_word(old_theme, theme)
+          require("nyxvim.utils").replace_word(old_theme, theme)
           actions.close(prompt_bufnr)
         end
       end)
