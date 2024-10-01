@@ -37,7 +37,7 @@ local options = {
     },
 
     nyxdash = {
-      load_on_startup = false,
+      load_on_startup = true,
 
       header = {
         "████      ██████████",
